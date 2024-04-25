@@ -7,8 +7,8 @@ export default async function Home() {
 
   return (
     <div className="container max-w-7xl p-6 mx-auto min-h-screen flex flex-col justify-center items-center gap-10">
-      <div className="flex items-center justify-between w-full">
-        <h1 className="text-[32px] font-bold">List of Snippets</h1>
+      <div className="flex items-center justify-between w-full gap-4">
+        <h1 className="md:text-[32px] text-[24px] font-bold">List of Snippets</h1>
         <Link href="/snippets/new" className="p-4 px-6 text-gray-50 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full">
           Create New Snippet
         </Link>

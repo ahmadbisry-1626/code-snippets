@@ -7,7 +7,7 @@ import { IoCodeSlash } from 'react-icons/io5';
 const CardList = ({ code }: { code: CardProps }) => {
     return (
         <div className="flex flex-col border-b-2 border-gray-300 pb-4">
-            <div className="flex items-center justify-between">
+            <div className="flex max-md:flex-col items-center justify-between gap-6">
                 <div className='w-[380px] flex flex-col items-end gap-2'>
                     <h3 className="font-semibold text-[20px] text-gray-700 text-end">
                         {code.title}
