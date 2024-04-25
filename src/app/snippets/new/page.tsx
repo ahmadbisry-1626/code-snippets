@@ -4,7 +4,9 @@ import React from 'react'
 import { IoCodeSlash } from 'react-icons/io5'
 import { MdSubtitles } from 'react-icons/md'
 
-const SnippetCreatePage = () => {
+const SnippetCreatePage = async () => {
+    await new Promise((r) => setTimeout(r, 2000))
+
     async function createSnippets(formData: FormData) {
         // Need to be a server action
         "use server"
@@ -47,8 +49,13 @@ const SnippetCreatePage = () => {
                                     name: "Hayes",
                                     id: 0,
                                   };'
-                                className='px-4 py-3 w-full bg-gray-100 focus:outline-none border-2 border-blue-600 rounded-[12px] h-[150px] font-medium' required />
+                                className='px-4 py-8 w-full bg-gray-700 text-gray-400 focus:outline-none rounded-[12px] h-[150px] font-medium' required />
                             <IoCodeSlash className='text-violet-600 w-6 h-6 mr-4 mb-2 absolute bottom-0 right-0' />
+                            <div className="flex items-center gap-2 absolute top-0 left-0 translate-y-3 translate-x-4">
+                                <div className="w-3 h-3 bg-blue-600 rounded-full" />
+                                <div className="w-3 h-3 bg-violet-600 rounded-full" />
+                                <div className="w-3 h-3 bg-violet-700 rounded-full" />
+                            </div>
                         </div>
 
                         <button type='submit' className='bg-gradient-to-r from-blue-600 to-violet-600 w-full p-4 rounded-full text-white'>
