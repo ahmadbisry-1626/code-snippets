@@ -22,29 +22,42 @@ export async function deleteSnippet(id: number) {
 
 export async function createSnippets(formState: { message: string }, formData: FormData) {
 
-    //User input checks and validation
-    const title = formData.get('title')
-    const code = formData.get('code')
+    try {
+        //User input checks and validation
+        const title = formData.get('title')
+        const code = formData.get('code')
 
-    if (typeof title !== 'string' || title.length < 5) {
-        return {
-            message: 'Title must be at least 5 characters long'
+        if (typeof title !== 'string' || title.length < 5) {
+            return {
+                message: 'Title must be at least 5 characters long'
+            }
+        }
+
+        if (typeof code !== 'string' || code.length < 10) {
+            return {
+                message: 'Code must be at least 10 characters long'
+            }
+        }
+
+        //Insert data to database
+        const snippet = await db.snippet.create({
+            data: {
+                title,
+                code
+            }
+        })
+
+    } catch (err: unknown) {
+        if (err instanceof Error) {
+            return {
+                message: err.message
+            }
+        } else {
+            return {
+                message: 'An error occurred'
+            }
         }
     }
-
-    if (typeof code !== 'string' || code.length < 10) {
-        return {
-            message: 'Code must be at least 10 characters long'
-        }
-    }
-
-    //Insert data to database
-    const snippet = await db.snippet.create({
-        data: {
-            title,
-            code
-        }
-    })
 
     redirect('/')
 }

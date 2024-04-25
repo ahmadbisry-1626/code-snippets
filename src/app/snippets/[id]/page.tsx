@@ -38,7 +38,7 @@ const ShowSnippets = async (props: SnippetShowPageProps) => {
                         <Link href={`/snippets/${snippet.id}/edit`} className='py-2 px-6 border-2 border-violet-600 bg-transparent rounded-full text-blue-600 hover:bg-violet-600 transition duration-200 hover:text-gray-50'>
                             Edit
                         </Link>
-                        <DeleteModal snippet={snippet} deleteSnippetAction={deleteSnippetAction}/>
+                        <DeleteModal snippet={snippet} deleteSnippetAction={deleteSnippetAction} />
                     </div>
                 </div>
 
@@ -58,7 +58,7 @@ const ShowSnippets = async (props: SnippetShowPageProps) => {
 
             <Link href="/" className='flex items-center justify-center gap-4 p-4 rounded-full px-12 transtion duration-200 relative group'>
                 <span className='text-[20px] font-medium bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent group-hover:-translate-x-6 transition-all duration-500'>Go back</span>
-                <RiArrowGoBackLine className='w-6 h-6 text-violet-600 absolute translate-x-4 group-hover:translate-x-10 opacity-0 group-hover:opacity-100 transition-all duration-500'/>
+                <RiArrowGoBackLine className='w-6 h-6 text-violet-600 absolute translate-x-4 group-hover:translate-x-10 opacity-0 group-hover:opacity-100 transition-all duration-500' />
             </Link>
         </div>
     )
